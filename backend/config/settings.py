@@ -24,8 +24,9 @@ SECRET_KEY = 'django-insecure--9e=#sw(f2vb7$nnvnnfnni(h%@jr@5d2-h*gy=%ek)jjiutf7
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
+import os
+import dj_database_url
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -153,3 +155,15 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+STATIC_URL = "/static/"
+
+STATICFILES_STORAGE = (
+    "whitenoise.storage.CompressedManifestStaticFilesStorage"
+)
+
+DATABASES["default"] = dj_database_url.config(
+    conn_max_age=600
+)
