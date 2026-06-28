@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://freelance-crm-production-585a.up.railway.app/api/",
+  baseURL:  "https://freelance-crm-kb58.onrender.com",
 });
 
 api.interceptors.request.use((config) => {
