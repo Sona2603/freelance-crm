@@ -152,9 +152,8 @@ REST_FRAMEWORK = {
     ),
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-]
+CORS_ALLOWED_ORIGINS = TRUE
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
