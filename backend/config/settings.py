@@ -152,7 +152,7 @@ REST_FRAMEWORK = {
     ),
 }
 
-CORS_ALLOWED_ORIGINS = TRUE
+CORS_ALLOWED_ORIGINS = True
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
