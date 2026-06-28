@@ -154,6 +154,7 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://freelance-crm-1-i0if.onrender.com"
 ]
 
 
